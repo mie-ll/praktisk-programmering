@@ -1,2 +1,2 @@
 # praktisk-programmering
-Hej
+Kursus i praktisk programmering og numeriske metoder, ved Aarhus universitet
