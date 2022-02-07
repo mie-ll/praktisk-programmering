@@ -6,4 +6,4 @@ hello.exe : hello.cs		 #hello.exe depends on hello.cs
 
 .PHONEY:clean			 #so the does not look after a clean file
 clean: 				 #a phoney target, there has no dependencies
-	rm -f out.txt hello.cs	 #reomes secondary files
+	rm -f out.txt hello.exe	 #reomes secondary files
