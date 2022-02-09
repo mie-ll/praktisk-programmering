@@ -1,5 +1,5 @@
 using static System.Math;
-class math {
+public static class math {
 	static void Main(){
 		double sqrt2=Sqrt(2.0);
 		System.Console.Write($"sqrt(2) = {sqrt2}\n");
@@ -10,6 +10,6 @@ class math {
 
 		double pie=Pow(PI,E);
 		System.Console.Write($"pi to the power of e = {pie}\n");
-}
+	}
 
 }
