@@ -4,3 +4,6 @@ Out.txt: main.exe
 main.exe: main.cs
 	mcs main.cs
 
+.PHONEY:clean
+clean: 
+	rm -f Out.txt main.exe
