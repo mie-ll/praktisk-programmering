@@ -1,9 +1,11 @@
 all: Out.txt
-	cat Out.txt
+	cat $<
 
 Out.txt: main.exe
-	mono main.exe > Out.txt
+	mono $< > $@
 
-mian.exe: main.cs
-	mcs main.cs 
+main.exe: main.cs
+	mcs main.cs -target:exe -out:main.exe
 
+clean:
+	rm -rf Out.txt main.exe

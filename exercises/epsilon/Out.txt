@@ -1,0 +1,4 @@
+my max int = 2147483647
+System max int = 2147483647 
+my min int = -2147483648
+System min int = -2147483648
