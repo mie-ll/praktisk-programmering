@@ -1,39 +1,26 @@
-usin static 
-public class vec{
-	public double x=0, y=0, z=0;
+using System;
+using static System.Console;
+using static System.Math;
 
-	//constructors:
-	public vec(double a, double b, double c){
-		x=a; y=b; z=c;
-		} 
-	public vec(){x=y=z=0;}
-
-	//print method 
-	public void print(string s){
-		Write(s); WriteLine($"{x} {y} {z}");
-		}
-	public void print(){this.print("");}
-	public static void print(vec v){v.print("");}
-
-	//operators:
-	public static vec operator*(vec u, double c){ 
-                return new vec(c*v.x, c*v.y, c*v.z);
-                }
-
-	public static vec operator*(double c, vec u){
-                return u*c;
-                }
-
-	public static vec operator+(vec u, vec v){
-		return new vec(u.x+v.x, u.y+v.y, u.z+v.z);
-		}
-	
-	public static vec operator+(vec u){return u;}
-	public static vec operator-(vec u){return -1*u;}
-	
-	public static vec operator-(vec u, vec v){
-		return new vec(u.x-v.x,u. u.y-v.y, u.z-v.z);
-		}
-
+class main{
+	static void Main(){
+		
+		vec u=new vec(100,200,300);
+		u.print("u=");
+		vec v=new vec(1,2,3);
+		v.print("v=");
+		(u+v).print("u+v = ");
+		(5*v).print("5*v=");
+		var tmp=u*5;
+		tmp.print("u*5 = ");
+		var w=3*u-v;	
+		w.print("w=");
+		vec.print(w);
+		WriteLine(vec.approx(w,3*u-v));
+		WriteLine(w.approx(3*u-v));
+		WriteLine(u.approx(v));
+//		dotted = dot(u,v);
+//		WriteLine("Dot product of u and u={dotted}");
+	}
 
 }
