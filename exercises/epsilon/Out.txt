@@ -1,4 +1,13 @@
+Exercise 1:
 my max int = 2147483647
 System max int = 2147483647 
 my min int = -2147483648
 System min int = -2147483648
+Exercise 2:
+The machine epsilon for double = 2,22044604925031E-16
+The machine epsilon for float = 1,192093E-07
+Exercise 3:
+sumA-1 = 0,000000e+000 should be 1,110223e-010
+sumB-1 = 1,110223e-010 should be 1,110223e-010
+Exercise 4:
+a = 2E-09, b = 1,5E-09 and |a-b|<1e-9 should be True and it is True
