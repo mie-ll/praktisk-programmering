@@ -37,8 +37,8 @@ public class vec{
 
 
 	//Dot product:
-	public static vec dot(vec u, vec v){
-		return new vec(u.x*v.x, u.y*v.y, u.z*v.z);
+	public static double dot(vec u, vec v){
+		return (u.x*v.x+u.y*v.y+u.z*v.z);
 		}
 
 	//Cross Product:
@@ -68,6 +68,10 @@ public class vec{
 
 	public static bool approx(vec u, vec v){ return u.approx(v); }
 
+	//Override ToString method:
+	public override string ToString(){
+		return $"vec:({x} {y} {z})";
+		}
 
 
 }

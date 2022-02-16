@@ -8,3 +8,5 @@ w=299 598 897
 True
 True
 False
+Dot product of u and u=1400
+vec:(1 2 3)

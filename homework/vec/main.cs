@@ -1,7 +1,7 @@
 using System;
 using static System.Console;
 using static System.Math;
-
+using static vec;
 class main{
 	static void Main(){
 		
@@ -19,8 +19,10 @@ class main{
 		WriteLine(vec.approx(w,3*u-v));
 		WriteLine(w.approx(3*u-v));
 		WriteLine(u.approx(v));
-//		dotted = dot(u,v);
-//		WriteLine("Dot product of u and u={dotted}");
+		double dotted = dot(u,v);
+		WriteLine($"Dot product of u and u={dotted}");
+
+		WriteLine(v.ToString());
 	}
 
 }
