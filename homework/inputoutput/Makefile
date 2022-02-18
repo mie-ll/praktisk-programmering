@@ -17,7 +17,7 @@ cmdline.exe: cmdline.cs
 
 #Del c
 out_fileio.txt: fileio.exe input.txt
-	mono fileio.exe -input:input.txt -output:out_fileio.txt
+	mono $< -input:input.txt -output:$@
 
 fileio.exe: fileio.cs
 	mcs -target:exe fileio.cs

@@ -2,7 +2,7 @@ using System;
 using static System.Console;
 using static System.Math;
 
-static class input{
+public class fileio{
 	public static int Main(string[] args){
 	        string infile=null,outfile=null;
 	        foreach(var arg in args){
