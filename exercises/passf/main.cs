@@ -1,7 +1,13 @@
+using System;
+using static System.Console;
+using static System.Math;
+using static passf;
 
 public static class main{
 	public static void Main(){
-		//Skal skal bruge make_table(sin(k*x)) og skrive outputtet ud....
+		for(int i=1; i<=3; i++){
+			passf.make_table(x=>Sin(i*x), 0, 2*PI, (double)PI/4);
+		}
 	}
 
 
