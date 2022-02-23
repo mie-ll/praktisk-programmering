@@ -9,3 +9,8 @@ output: regular table:
 -1,230000e+002 2,340000e+002 4,567000e+003 
 7,000000e+000 -7,400000e+009 6,720000e+002 
 5,300000e+001 2,340000e+002 4,500000e+001 
+Removing element i=1 and printing again:
+Size before removal: 3
+Size after removal: 2
+-1,230000e+002 2,340000e+002 4,567000e+003 
+5,300000e+001 2,340000e+002 4,500000e+001 

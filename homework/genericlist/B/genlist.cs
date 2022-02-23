@@ -1,3 +1,4 @@
+using static System.Console;
 
 public class genlist<T>{
 	public T[] data;
@@ -14,9 +15,14 @@ public class genlist<T>{
 	}
 
 
-	//public void remove(int i){}
-
-
+	public void remove(int j){
+		if(j>size-1) WriteLine($"Remove: j = {j}, size = {size}");
+		for(int i=j; i<size; i++){
+			data[i] = data[i+1];
+	
+		}
+		size--;
+	}
 
 
 

@@ -19,5 +19,18 @@ public class main{
                         foreach(var number in numbers)Write($"{number:e} ");
                         WriteLine();
                }
+
+		
+		WriteLine("Removing element i=1 and printing again:");
+		WriteLine($"Size before removal: {list.size}");
+		list.remove(1);
+		WriteLine($"Size after removal: {list.size}");
+		for(int i=0;i<list.size;i++){
+			var numbers = list.data[i];
+			foreach(var number in numbers)Write($"{number:e} ");
+			WriteLine();
+		}
+
+
         }
 }
