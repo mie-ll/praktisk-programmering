@@ -1,0 +1,8 @@
+        set terminal png 
+        set output 'lngamma.gnuplot.png' 
+        set xlabel 'x' 
+        set ylabel 'y' 
+        set key left top 
+        set title 'LnGamma function' 
+        plot [-0:50] [-1:160] 'lngamma.data.txt' index 0 using 1:2 with lines title 'LnGamma function',        'lngamma.tab.txt' with points title 'tab' 
+        

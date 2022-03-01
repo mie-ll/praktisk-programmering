@@ -11,7 +11,7 @@ class main{
 		return Exp(lngamma);
 	}
 
-	plublic static void Main(){
+	public static void Main(){
 		for(double x=0.1;x<=5;x+=1.0/8)
 			WriteLine($"{x} {gamma(x)}");
 	}
