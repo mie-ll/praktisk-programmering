@@ -1,0 +1,11 @@
+set terminal pdf 
+set output 'exp_gnuplot.pdf' 
+set size 0.6 
+set grid 
+set tics out 
+set xlabel 'x' 
+set ylabel 'exp(x)' 
+set key left top 
+set title 'Exponetial function' 
+plot [-4:4] [] 'exp.data.txt' index 0 using 1:2 with lines title 'exp(x)','exp.tab.txt' with points title 'table values' 
+
