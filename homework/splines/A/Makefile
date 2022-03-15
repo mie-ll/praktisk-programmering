@@ -5,6 +5,7 @@ lspline_gnuplot.png: out.txt
 	set output '$@' \n\
 	set xlabel 'x' \n\
 	set ylabel 'y' \n\
+	set grid \n\
 	set key left top \n\
 	plot [0:6] [-1:1] 'out.txt' index 0 using 1:2 with points title 'Tabulated', \
 	'out.txt' index 1 using 1:2 with lines title 'Linear interpolation', \
@@ -13,7 +14,7 @@ lspline_gnuplot.png: out.txt
 
 
 out.txt: main.exe
-	mono $< > $@
+	mono $< | sed 's/,/./g' > $@
 
 main.exe: main.cs lspline.dll
 	mcs $< -target:exe -reference:lspline.dll
