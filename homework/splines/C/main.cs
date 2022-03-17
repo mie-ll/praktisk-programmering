@@ -15,14 +15,11 @@ public class main{
 			WriteLine($"{xs[i]} {y1[i]}");
 		}
 		
-		cspline s1 = new cspline(xs, y1);
-		WriteLine($"1");		
+		cspline s1 = new cspline(xs, y1);		
 		WriteLine($"\n");
 		for(double z=-5; z<=5; z+=1.0/16){
 			double inter = s1.cspline_eval(z);
-			WriteLine($"2");
-			double integ = s1.integ(z,-30);
-			WriteLine($"3");
+			double integ = s1.integ(z);
 			double deriv = s1.deriv(z);
 			WriteLine($"{z} {inter} {integ} {deriv}");
 		}
