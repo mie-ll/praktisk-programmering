@@ -3,15 +3,24 @@ using static System.Console;
 using static System.Math;
 
 class main{
-	public static void Main(){
-		int ncalls = 0;
-		Func<double, double> f = delegate(double x){
-			ncalls++;
-			return Log(x)/Sqrt(x);
-		}
-		double result = integrate.quad(f, a:0, b:1, acc:1e-6, eps:0);
-		WriteLine($"result={result}, ncalls={ncalls}");
-		
+	public static double erf(double z){
+		Func<double,double> f = delegate(double x){return Exp(-x*x);};
+		double result = integrate.quad(f:f,a:0,b:z,acc:1e-6,eps:0);
+		return result*2/Sqrt(PI);
 	}
+	
+	public static void Main(){
+			int ncalls=0;
+			Func<double,double> f = delegate(double x){
+				ncalls++; 
+				return Log(x)/Sqrt(x);
+			};
+			double result = integrate.quad(f,a:0,b:1,acc:1e-6,eps:1e-6); //calling the quad function with certain accuracies 
+			WriteLine($"Integral of ln(x)/sqrt(x): Result = {result}, ncalls = {ncalls}");
 
+			WriteLine($"\n");
+			for(double x=-3; x<=3; x+=1.0/8){
+				WriteLine($"{x} {erf(x)}");
+			}
+	}
 }
