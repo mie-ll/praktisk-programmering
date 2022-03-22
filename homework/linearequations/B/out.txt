@@ -1,0 +1,28 @@
+Random generated 2 by 2 matrix:
+
+         7          6 
+         7          2 
+
+
+Factorize A into Q and R:
+Q matrix after decomposition:
+
+     0,707      0,707 
+     0,707     -0,707 
+R matrix after decomposition:
+
+       9,9       5,66 
+         0       2,83 
+
+
+The invers matrix A^-1:
+
+     0,707      0,707 
+      0,25      -0,25 
+
+
+Checking A*A^-1=I:
+
+      6,45       3,45 
+      5,45       4,45 
+A*A^-1 is approximately equal to I: False

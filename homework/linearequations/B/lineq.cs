@@ -1,4 +1,3 @@
-
 public static class lineq{
 	public static void QRGSdecomp(matrix A, matrix R){
 		int m = A.size2;
@@ -20,14 +19,30 @@ public static class lineq{
 	}
 
 	public static void backsub(matrix U, vector c){
-		for(int i=c.size-1; i>=0; i--){
-			double sum = 0;
+		for(int i=c.size-1; i>0; i--){
+			double sum=0;
 			for(int k=1+i; k<c.size; k++){
 				sum += U[i,k]*c[k];
 			}
-		c[i] = (c[i]-sum)/U[i,i];
+		 c[i] = (c[i]-sum)/U[i,i];
 		}
 	}
+	
+	public static matrix QRGSinverse(matrix Q, matrix R){
+		int n = Q.size1;
+		matrix I = new matrix(n,n);
+		I.set_identity();
+		matrix res = new matrix(n,n);
+		for(int i=0; i<n; i++){
+			vector ei = I[i];
+			vector x = QRGSsolve(Q, R, ei);
+			res[i] = x;
+		}
+		return res;
+	}
+	
+
+
 
 
 }
