@@ -10,7 +10,7 @@ public class main{
 		var rand = new Random();
 		for(int i=0; i<n; i++){
 			for(int j=0; j<m; j++){
-				A[i,j] = rand.Next(11);
+				A[i,j] = rand.NextDouble();
 			}
 		}
 		matrix A_copy = A.copy();
@@ -28,6 +28,10 @@ public class main{
 		Q.print();
 		WriteLine($"R matrix after decomposition:");
 		R.print();
+		var tmp=Q*R;
+		tmp.print("Q*R=");
+		tmp=Q.T*Q;
+		tmp.print("Q^T*Q=");
 
 		WriteLine($"\n");
 		

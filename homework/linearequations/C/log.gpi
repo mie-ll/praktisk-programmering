@@ -1,0 +1,10 @@
+set terminal png 
+set output 'time.png' 
+set xlabel 'x' 
+set ylabel 'y' 
+set grid 
+set key left top 
+f(x) = a*x*x*x+b 
+fit f(x) 'out.txt' index 0 using 1:2 via a,b 
+plot [] [] 'out.txt' index 0 using 1:2 with points title 'Decomposed time', f(x) title 'Fit' 
+

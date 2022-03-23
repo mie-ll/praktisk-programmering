@@ -11,7 +11,7 @@ class main{
 		var rand = new Random();
 		for(int i=0; i<n; i++){
 			for(int j=0; j<m; j++){
-				A[i,j] = rand.Next(11);
+				A[i,j] = rand.NextDouble();
 			}
 		}
 		matrix A_copy = A.copy();
@@ -56,9 +56,9 @@ class main{
 		matrix R2 = new matrix(n2,m2);
 		vector b = new vector(n2);
 		for(int i=0; i<n2; i++){
-			b[i] = rand.Next(1,9);
+			b[i] = rand.NextDouble();
 			for(int j=0; j<m2; j++){
-				A2[i,j] = rand.Next(1,9);
+				A2[i,j] = rand.NextDouble();
 			}
 		}
 				
