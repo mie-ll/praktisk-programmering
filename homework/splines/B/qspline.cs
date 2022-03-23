@@ -1,7 +1,8 @@
 using System;
+using static System.Math;
 
 public class qspline{
-	private double[] x, y, b,c;
+	private double[] x, y, b, c;
 
 	public static int binsearch(double[] x, double z){
 		int i=0, j=x.Length-1;
@@ -54,7 +55,17 @@ public class qspline{
 	}
 	
 	public double integ(double z, double cst){
-		double s = 0; //sum
+/*		double s = 0; //sum
+		int id = binsearch(x, z);
+		for(int i=0; i<id; i++){
+			double p = (y[i+1]-y[i])/(x[i+1]-x[i]); //slope
+			double bi = p-c[i]*(x[i+1]-x[i]);
+			s += y[i]*(x[i+1] - x[i]) + bi*(Pow(x[i+1],2)-Pow(x[i],2))/2 + c[i]*(Pow(x[i+1],3)-Pow(x[i],3))/3;
+		}
+		double dx_id = z-x[id];
+		s = s + y[id]*dx_id + b[id]*(Pow(z,2)-Pow(x[id],2))/2 + c[id]*(Pow(z,3)-Pow(x[id],3))/3 + cst;
+		return s;
+*/		double s = 0; //sum
 		int id = binsearch(x, z);
 		for(int i=0; i<id; i++){
 			double p = (y[i+1]-y[i])/(x[i+1]-x[i]); //slope

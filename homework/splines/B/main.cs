@@ -21,7 +21,7 @@ public class main{
 			WriteLine($"{xs[i]} {y1[i]}");
 		}
 		WriteLine($"\n");
-		for(double z=-5; z<=5; z+=1.0/16){
+		for(double z=-5; z<=5; z+=1.0/32){
 			double inter = s1.qspline_eval(z);
 			double integ = s1.integ(z,-4);
 			double deriv = s1.deriv(z);
@@ -35,7 +35,7 @@ public class main{
 			WriteLine($"{xs[i]} {y2[i]}");
 		}
 		WriteLine($"\n");
-		for(double z=-5; z<=5; z+=1.0/16){
+		for(double z=-5; z<=5; z+=1.0/32){
 			double inter = s2.qspline_eval(z);
 			double integ = s2.integ(z,6.5);
 			double deriv = s2.deriv(z);
@@ -48,7 +48,7 @@ public class main{
 			WriteLine($"{xs[i]} {y3[i]}");
 		}
 		WriteLine($"\n");
-		for(double z=-5; z<=5; z+=1.0/16){
+		for(double z=-5; z<=5; z+=1.0/32){
 			double inter = s3.qspline_eval(z);
 			double integ = s3.integ(z,-30);
 			double deriv = s3.deriv(z);
