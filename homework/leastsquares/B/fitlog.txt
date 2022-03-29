@@ -1,0 +1,5 @@
+
+
+Fit parameters: a = 4,95112516950657, lambda = -0,172070796448846+/-0,00402918677701603
+The half-life is found by Ln(2)/lambda and is 4,02826740426001 +/- 0,0162306417595292 days
+This agrees with the modern table value on  3.632 days(wiki)
