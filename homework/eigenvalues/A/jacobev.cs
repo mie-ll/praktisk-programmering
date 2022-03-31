@@ -1,25 +1,21 @@
 using System;
 using static System.Math;
 
-public class evd{
+public class jacobev{
 
 	public static void timesJ(matrix A, int p, int q, double theta){
-		double c = Cos(theta);
-		double s = Sin(theta);
+		double c = Cos(theta), s = Sin(theta);
 		for(int i=0; i<A.size1; i++){
-			double aip = A[i,p];
-			double aiq = A[i,q];
+			double aip = A[i,p],  aiq = A[i,q];
 			A[i,p] = c*aip-s*aiq;
 			A[i,q] = s*aip+c*aiq;
 		}
 	}
 	
 	public static void Jtimes(matrix A, int p, int q, double theta){
-		double c = Cos(theta);
-		double s = Sin(theta);
+		double c = Cos(theta), s = Sin(theta);
 		for(int j=0; j<A.size1; j++){
-			double apj = A[p,j];
-			double aqj = A[q,j];      
+			double apj = A[p,j], aqj = A[q,j];      
 			A[p,j] = c*apj+s*aqj;
 			A[q,j] = -s*apj+c*aqj;
 		}
@@ -35,11 +31,11 @@ public class evd{
 			changed = false;
 			for(int p=0; p<n-1; p++){
 				for(int q=p+1; q<n; q++){
-					double apq=matrix.get(A,p,q);
-					double app=matrix.get(A,p,p);
-					double aqq=matrix.get(A,q,q);
-					double theta=0.5*atan2(2*apq,aqq-app);
-					double c=cos(theta),s=sin(theta);
+					double apq=A.get(p,q);
+					double app=A.get(p,p);
+					double aqq=A.get(q,q);
+					double theta=0.5*Atan2(2*apq,aqq-app);
+					double c=Cos(theta),s=Sin(theta);
 					double new_app=c*c*app-2*s*c*apq+s*s*aqq;
 					double new_aqq=s*s*app+2*s*c*apq+c*c*aqq;
 					if(new_app!=app || new_aqq!=aqq){ // do rotation
@@ -50,7 +46,7 @@ public class evd{
 					}
 				}
 			}
-		}while(changed);
+		} while(changed);
 		return sweeps;
 	}
 
