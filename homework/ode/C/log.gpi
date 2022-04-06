@@ -1,0 +1,9 @@
+set terminal pdf 
+set output 'figure.pdf' 
+set xlabel 'x' 
+set ylabel 'y' 
+set grid 
+set title 'Three body problem' 
+set key left top 
+plot [] [] 'out.txt' using 2:3 with lines title 'Planet 1', 	'out.txt' using 6:7 with lines title 'Planet 2', 	 'out.txt' using 10:11 with lines title 'Planet 3'
+
