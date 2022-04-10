@@ -3,7 +3,7 @@ using static System.Console;
 using static System.Math;
 using static System.Double;
 
-public static partial class integration{
+public static class integration{
 	
 	public static double integrate(Func<double,double> f,
 		double a, double b,
@@ -25,6 +25,22 @@ public static partial class integration{
 		} else {
 			return integrate(f,a,(a+b)/2,delta/Sqrt(2),epsilon,f1,f2) + 
            		       integrate(f,(a+b)/2,b,delta/Sqrt(2),epsilon,f3,f4);
+		}
+	}
+	
+	//Clenshaw–Curtis variable transformation(vt)
+	public static double vt_integrate(Func<double,double> f, 
+		double a, double b,
+		double delta=0.001, double epsilon=0.001,
+		double f2=NaN, double f3=NaN){
+		
+		if(a == -1 && b == 1){
+			Func<double,double> f_vt = (x => f(Cos(x))*Sin(x));
+			return integrate(f_vt, 0, PI);
+		}
+		else{
+			Func<double,double> f_vt = (x => f((a+b)/2+(a-b)*Cos(x))*Sin(x)*(b-a)/2);
+			return integrate(f_vt, 0, PI);
 		}
 	}
 
