@@ -36,11 +36,11 @@ public static class integration{
 		
 		if(a == -1 && b == 1){
 			Func<double,double> f_vt = (x => f(Cos(x))*Sin(x));
-			return integrate(f_vt, 0, PI);
+			return integrate(f_vt, 0, PI, delta:delta, epsilon:epsilon, f2:f2, f3:f3);
 		}
 		else{
 			Func<double,double> f_vt = (x => f((a+b)/2+(a-b)*Cos(x))*Sin(x)*(b-a)/2);
-			return integrate(f_vt, 0, PI);
+			return integrate(f_vt, 0, PI, delta:delta, epsilon:epsilon, f2:f2, f3:f3);
 		}
 	}
 
