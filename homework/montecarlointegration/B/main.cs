@@ -13,7 +13,9 @@ public class main{
 		vector a1 = new double[2] {0,0};
 		vector b1 = new double[2] {1,1};
 		var result1 = mcintegration.plainmc(f1, a1, b1, 50000);
-		WriteLine($"The result is {result1.Item1} and the error is {result1.Item2}.");
+		WriteLine($"The result is {result1.Item1} and the error is {result1.Item2} - part A.");
+		var result1H = mcintegration.haltonmc(f1, a1, b1, 50000);
+		WriteLine($"The result is {result1H.Item1} and the error is {result1H.Item2} - part B.");
 		WriteLine($"Should be 0.25");
 
 		WriteLine($"\n");
