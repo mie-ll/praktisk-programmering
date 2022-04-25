@@ -59,38 +59,21 @@ public class mcintegration{
 		}
 		double  sum = 0, sum2 = 0;
 		double[] x = new double[dim];
-		double[] x2 = new double[dim];
-		int offset = 0;
 		for(int i=0; i<N; i++){
-			double[] quasi_rand = halton(i+offset, dim);
-			double[] quasi_rand2 = halton(i+offset, dim, 4);
-			for(int k=0; k<N; k++){
+			double[] quasi_rand = halton(i, dim);
+			for(int k=0; k<dim; k++){
 				x[k] = a[k] + quasi_rand[k]*(b[k]-a[k]);
-				x2[k] = a[k] + quasi_rand2[k]*(b[k]-a[k]);
 			}
 			double fx = f(x);
-			double fx2 = f(x2);
-			if(double.IsNaN(fx) || double.IsInfinity(fx) || double.IsNaN(fx2) || double.IsInfinity(fx2)){
-				--i; ++offset;
-			} else {
 				sum += fx;
-				sum2 += fx2;
-			}
+				sum2 += fx*fx;
 		}
 		double mean = sum/N;
-		double mean2 = sum2/N;
-		double sigma = Abs(mean*V-mean2*V);
-		var result = (mean*V, sigma);
+		double sigma = Sqrt(sum2/N-mean*mean);
+		double error = sigma*V/Sqrt(N);
+		var result = (mean*V, error);
 		return result;
-		
-		
-	}
-
-
-
-
-
-
+	}//haltonmc
 
 
 }//class

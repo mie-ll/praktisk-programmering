@@ -13,7 +13,7 @@ public class main{
 		vector a1 = new double[2] {0,0};
 		vector b1 = new double[2] {1,1};
 		var result1 = mcintegration.plainmc(f1, a1, b1, 50000);
-		WriteLine($"The result is {result1.Item1} and the error is {result1.Item2}.");
+		WriteLine($"The result is {result1.Item1} and the estimated error is {result1.Item2} and the actual error is {result1.Item1-0.25}.");
 		WriteLine($"Should be 0.25");
 
 		WriteLine($"\n");
@@ -23,7 +23,7 @@ public class main{
 		vector a2 = new double[2] {0,0};
 		vector b2 = new double[2] {1,PI};
 		var result2 = mcintegration.plainmc(f2, a2, b2, 50000);
-		WriteLine($"The result is {result2.Item1} and the error is {result2.Item2}.");
+		WriteLine($"The result is {result2.Item1} and the estimated error is {result2.Item2} and the actual error is {result2.Item1-1.0}.");
 		WriteLine($"Should be 1");
 
 		WriteLine($"\n");
@@ -33,7 +33,7 @@ public class main{
 		vector a3 = new double[3] {0,0,0};
 		vector b3 = new double[3] {PI,PI,PI};
 		var result3 = mcintegration.plainmc(f3, a3, b3, 50000);
-		WriteLine($"The result is {result3.Item1} and the error is {result3.Item2}.");
+		WriteLine($"The result is {result3.Item1} and the estimated error is {result3.Item2} and the actual error is {result3.Item1-1.393203929}.");
 		WriteLine($"Should be 1.3932039296856768591842462603255");
 	}//Main
 
