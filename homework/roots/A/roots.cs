@@ -4,8 +4,12 @@ using static System.Math;
 
 public class roots{
 	public static vector newton(Func<vector,vector> f, vector x0, double epsilon=1e-2){
+		for(int i=0; i<x0.size; i++){
+			if(x0[i] == 0) {x0[i] = 1e-5;}
+		}
+
 		vector x = x0.copy();
-		int n = x.size;
+		int n = x0.size;
 		matrix J = new matrix(n,n); //calculating the Jacobian matrix J
 		double delta = 0;
 		vector fy = new vector(n);
@@ -13,13 +17,15 @@ public class roots{
 		vector fx = new vector(n);
 
 		bool run1 = true;
-		while(run1){
+		int k = 0;
+		while(run1 && k < 10000){
 			fx = f(x);
-			for(int i=0; i<n; i++){
+			for(int i=0; i<n; i++){ //calculating Jacobian matrix J
 				delta = Abs(x[i])*Pow(2,-23);
 				x[i] += delta;
+
 				for(int j=0; j<n; j++){
-					J[i,j] = (f(x)[i]-fx[i])/delta;
+					J[j,i] = (f(x)[i]-fx[i])/delta;
 				}
 				x[i] -= delta;
 			}
@@ -45,6 +51,7 @@ public class roots{
 		if(Dx.norm() < delta || fx.norm() < epsilon){
 			run1 = false;
 		}
+		k = k+1;
 		}//run1
 		
 		return x;
