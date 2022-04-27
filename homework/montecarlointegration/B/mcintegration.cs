@@ -59,7 +59,7 @@ public class mcintegration{
 		}
 		double  sum = 0, sum2 = 0;
 		double[] x = new double[dim];
-		for(int i=0; i<N; i++){
+		for(int i=1; i<=N; i++){
 			double[] quasi_rand = halton(i, dim);
 			for(int k=0; k<dim; k++){
 				x[k] = a[k] + quasi_rand[k]*(b[k]-a[k]);

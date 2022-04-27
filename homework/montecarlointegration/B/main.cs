@@ -34,11 +34,14 @@ public class main{
 		WriteLine($"\n");
 
 		WriteLine($"Integration of a 3 dimentional function: (1-cos(x)*cos(y)*cos(z)*pi^3)^-1 dx dy dz, with x = [0,pi], y=[0,pi] and z=[0,pi]:");
-		Func<vector,double> f3 = x => 1/((1-Cos(x[0])*Cos(x[1])*Cos(x[2]))*Pow(PI,3) );
+		Func<vector,double> f3 = x => {
+			return 1/((1-Cos(x[0])*Cos(x[1])*Cos(x[2]))*Pow(PI,3) );
+			};
 		vector a3 = new double[3] {0,0,0};
 		vector b3 = new double[3] {PI,PI,PI};
-		var result3 = mcintegration.plainmc(f3, a3, b3, 50000);
-		var (result3H, err3) = mcintegration.haltonmc(f3, a3, b3, 50000);
+		int N=50000;
+		var result3 = mcintegration.plainmc(f3, a3, b3, N);
+		var (result3H, err3) = mcintegration.haltonmc(f3, a3, b3, N);
 		WriteLine($"The result is {result3.Item1} and the estimated error is {result3.Item2} and the actual error is {result3.Item1-1.39320} - part A.");
 		WriteLine($"The result is {result3H} and the estimated error is {err3} and the actual error is {result3H-1.39320} - part B.");
 		WriteLine($"Should be 1.3932039296856768591842462603255");

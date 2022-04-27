@@ -2,18 +2,18 @@ Testing implementation of Monte Carlo integration plainmc methode:
 
 
 Integration of a 2 dimentional function: x*y dx dy, with x = [0,1] and y=[0,1]:
-The result is 0,251011583382947 and the estimated error is 0,000988887853159409 and the actual error is -0,249011112146841- part A.
-The result is 0,249949136753289 and the estimated error is 0,000985896498051436 and the actual error is -5,08632467110803E-05 - part B.
+The result is 0,251392398135579 and the estimated error is 0,000986137733462912 and the actual error is -0,249013862266537- part A.
+The result is 0,249949861996977 and the estimated error is 0,000985893087447427 and the actual error is -5,01380030227538E-05 - part B.
 Should be 0.25
 
 
 Integration of a 2 dimentional function: x*sin(y) dx dy, with x = [0,1] and y=[0,pi]:
-The result is 1,00003915499817 and the estimated error is 0,00359896896071328 and the actual error is 3,91549981715311E-05 - part A.
-The result is 0,999943731158596 and the estimated error is 0,00359143653187529 and the actual error is -5,62688414041945E-05 - part B.
+The result is 1,00435228721385 and the estimated error is 0,00361937616972292 and the actual error is 0,00435228721385172 - part A.
+The result is 0,99994483617818 and the estimated error is 0,00359143054857476 and the actual error is -5,51638218198036E-05 - part B.
 Should be 1
 
 
 Integration of a 3 dimentional function: (1-cos(x)*cos(y)*cos(z)*pi^3)^-1 dx dy dz, with x = [0,pi], y=[0,pi] and z=[0,pi]:
-The result is 1,39585663164458 and the estimated error is 0,0219934211208208 and the actual error is 0,00265663164457974 - part A.
-The result is Infinity and the estimated error is NaN and the actual error is Infinity - part B.
+The result is 1,3828268335713 and the estimated error is 0,0157024271809034 and the actual error is -0,0103731664287026 - part A.
+The result is 1,37933601570414 and the estimated error is 0,0198214693116577 and the actual error is -0,0138639842958561 - part B.
 Should be 1.3932039296856768591842462603255
