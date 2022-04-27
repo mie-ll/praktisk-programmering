@@ -12,7 +12,7 @@ class main{
 	}
 
 	public static void Main(){
-		for(double x=0.1;x<=5;x+=1.0/8)
+		for(double x=-5.1;x<=5.1;x+=1.0/32)
 			WriteLine($"{x} {gamma(x)}");
 	}
 }       

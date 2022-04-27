@@ -9,7 +9,7 @@ gamma.gnuplot.png: gamma.data.txt gamma.tab.txt Makefile
         set ylabel 'y' \n\
         set key left top \n\
         set title 'Gamma function' \n\
-        plot [-0:5] [-0:5] '$<' index 0 using 1:2 with lines title 'Gamma function',\
+        plot [-5:5] [-10:10] '$<' index 0 using 1:2 with lines title 'Gamma function',\
         'gamma.tab.txt' with points title 'tab' \n\
         "| tee log.gpi | gnuplot
 
