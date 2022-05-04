@@ -14,21 +14,21 @@ public class roots{
 		double delta = 0;
 		vector fy = new vector(n);
 		vector y = new vector(n);
-		vector fx = new vector(n);
 
 		bool run1 = true;
 		int k = 0;
-		while(run1 && k < 10000){
-			fx = f(x);
+		while(run1){// && k < 1000){
+			vector fx = f(x);
 			for(int i=0; i<n; i++){ //calculating Jacobian matrix J
-				delta = Abs(x[i])*Pow(2,-23);
+				delta = Abs(x[i])*Pow(2,-26);
 				x[i] += delta;
 
 				for(int j=0; j<n; j++){
-					J[j,i] = (f(x)[i]-fx[i])/delta;
+					J[j,i] = (f(x)[j]-fx[j])/delta;
 				}
 				x[i] -= delta;
 			}
+
 		matrix R = new matrix(n,n);
 		matrix Q = J.copy();
 		lineq.QRGSdecomp(Q,R);
