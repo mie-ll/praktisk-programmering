@@ -2,7 +2,7 @@ using System;
 using static System.Console;
 using static System.Math;
 
-public class minimaztion{
+public class mini{
 		
 		public static vector gradient(Func<vector,double> f, vector x){
 			//eq 3...
@@ -23,7 +23,7 @@ public class minimaztion{
 		}//gradient
 
 
-		public static (vector, int)  qnewton(Func<vector,double> f, vector xstart, double acc){
+		public static vector  qnewton(Func<vector,double> f, vector xstart, double acc){
 			vector x = xstart.copy();
 			int n = x.size;
 			int step = 0; //max step is 10000
@@ -37,9 +37,9 @@ public class minimaztion{
 				step++;
 				vector dx = -B*grad; //eq 6 ∆x = −H(x)−1∇φ(x) 
 				
-				if(dx.norm() < epsillon*x.norm() || dx.norm() < acc){//Unsuccesful step...
-					Error.WriteLine("Error... ");
-					break;
+			if(dx.norm() < epsillon*x.norm() || dx.norm() < acc){//Unsuccesful step...
+					Error.WriteLine("dx < deltax");
+					//break;
 				}
 				vector z; //z=x+s
 				double fz, lambda = 1.0;
@@ -65,7 +65,7 @@ public class minimaztion{
 			grad = gradz;
 			fx = fz;
 			}//while
-		return (x, step);
+		return x;
 
 		}//qnewton
 
