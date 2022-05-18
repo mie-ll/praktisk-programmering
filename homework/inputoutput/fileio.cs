@@ -4,6 +4,7 @@ using static System.Math;
 
 public class fileio{
 	public static int Main(string[] args){
+		WriteLine("Part C");
 	        string infile=null,outfile=null;
 	        foreach(var arg in args){
 	                var words=arg.Split(':');

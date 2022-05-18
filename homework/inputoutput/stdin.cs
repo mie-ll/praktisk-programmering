@@ -4,6 +4,7 @@ using static System.Math;
 
 static class stdin{
 	public static void Main(){
+		WriteLine("Part A");
 		char[] delimiters = {' ','\t','\n'};
 		var options = StringSplitOptions.RemoveEmptyEntries;
 		for( string line = ReadLine(); line != null; line = ReadLine() ){

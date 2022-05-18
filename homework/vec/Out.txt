@@ -1,3 +1,4 @@
+part a
 u=100 200 300
 v=1 2 3
 u+v = 101 202 303
@@ -5,8 +6,12 @@ u+v = 101 202 303
 u*5 = 500 1000 1500
 w=299 598 897
 299 598 897
-True
-True
-False
-Dot product of u and u=1400
+Part c
+approximation of w and 3*u-v : True
+approximation of w and 3*u-v : True
+approximation of u and v : False
+part b
+Dot product of u and v=1400
+Cross Product of u and v: vec:(0 0 0)
+Norm of u: 374,165738677394
 vec:(1 2 3)

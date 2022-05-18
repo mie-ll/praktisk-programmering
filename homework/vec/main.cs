@@ -5,6 +5,7 @@ using static vec;
 class main{
 	static void Main(){
 		
+		WriteLine("part a");
 		vec u=new vec(100,200,300);
 		u.print("u=");
 		vec v=new vec(1,2,3);
@@ -16,11 +17,15 @@ class main{
 		var w=3*u-v;	
 		w.print("w=");
 		vec.print(w);
-		WriteLine(vec.approx(w,3*u-v));
-		WriteLine(w.approx(3*u-v));
-		WriteLine(u.approx(v));
+		WriteLine("Part c");
+		WriteLine($"approximation of w and 3*u-v : {vec.approx(w,3*u-v)}");
+		WriteLine($"approximation of w and 3*u-v : {w.approx(3*u-v)}");
+		WriteLine($"approximation of u and v : {u.approx(v)}");
+		WriteLine("part b");
 		double dotted = dot(u,v);
-		WriteLine($"Dot product of u and u={dotted}");
+		WriteLine($"Dot product of u and v={dotted}");
+		WriteLine($"Cross Product of u and v: {cross(u,v)}");
+		WriteLine($"Norm of u: {norm(u)}");
 
 		WriteLine(v.ToString());
 	}
