@@ -10,19 +10,19 @@ public class main{
 		
 		Func<double,double> f1 = x => Sqrt(x);
 		double result1 = integration.integrate(f1, a, b);
-		WriteLine($"Integration of sqrt(x) from 0 to 1 = {result1}");
+		WriteLine($"Integration of sqrt(x) from 0 to 1 = {result1}, should be 0.6667");
 	
 		Func<double,double> f2 = x => 1.0/Sqrt(x);
 		double result2 = integration.integrate(f2, a, b);
-		WriteLine($"Integration of 1/sqrt(x) from 0 to 1 = {result2}");
+		WriteLine($"Integration of 1/sqrt(x) from 0 to 1 = {result2}, should be 2");
 		
 		Func<double,double> f3 = x => 4.0*Sqrt(1.0-Pow(x,2));
 		double result3 = integration.integrate(f3, a, b);
-		WriteLine($"Integration of 4*sqrt(1-x^2) from 0 to 1 = {result3}");
+		WriteLine($"Integration of 4*sqrt(1-x^2) from 0 to 1 = {result3}, should be 3.14");
 
 		Func<double,double> f4 = x => Log(x)/Sqrt(x);
 		double result4 = integration.integrate(f4, a, b);
-		WriteLine($"Integration of ln(x)/sqrt(x) from 0 to 1 = {result4}");
+		WriteLine($"Integration of ln(x)/sqrt(x) from 0 to 1 = {result4}, should be -4");
 
 	
 	}//Main
