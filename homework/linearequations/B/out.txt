@@ -1,30 +1,30 @@
 Random generated 2 by 2 matrix:
 
-     0,805      0,333 
-     0,779      0,082 
+     0,669      0,815 
+     0,398      0,112 
 
 
 Factorize A into Q and R:
 Q matrix after decomposition:
 
-     0,719      0,696 
-     0,696     -0,719 
+     0,859      0,512 
+     0,512     -0,859 
 R matrix after decomposition:
 
-      1,12      0,296 
-         0      0,173 
+     0,779      0,758 
+         0       0,32 
 Q*R=
-     0,805      0,333 
-     0,779      0,082 
+     0,669      0,815 
+     0,398      0,112 
 Q^T*Q=
-         1   2,22e-16 
-  2,22e-16          1 
+         1   3,33e-16 
+  3,33e-16          1 
 
 
 The invers matrix A^-1:
 
-    -0,424       1,72 
-      4,03      -4,16 
+    -0,451       3,27 
+       1,6      -2,68 
 
 
 Checking A*A^-1=I:
