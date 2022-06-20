@@ -1,0 +1,9 @@
+set terminal pdf 
+set output 'test2.pdf' 
+set xlabel 'Time' 
+set ylabel 'Numerical solution' 
+set grid 
+set title 'Numerical solution to differential equation: d^2theta(t)/dt^2+b*dtheta(t)/dt+c*sin(theta(t))=0' 
+set key left top 
+plot [0:10] [] 'solution.txt' index 2 using 1:2 with lines title 'theta(t) - one-step', 	'solution.txt' index 2 using 1:3 with lines title 'omega(t) - one-step', 	'solution.txt' index 3 using 1:2 with lines dashtype 2 title 'theta(t) - two-step', 	'solution.txt' index 3 using 1:3 with lines dashtype 2 title 'omega(t) - two-step' 
+

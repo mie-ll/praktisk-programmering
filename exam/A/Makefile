@@ -36,7 +36,7 @@ test1.pdf: solution.txt
 		'solution.txt' index 0 using 1:3 with lines dashtype 2 title 'omega(t) - one-step', \
 		'solution.txt' index 1 using 1:2 with lines title 'theta(t) - two-step', \
 		'solution.txt' index 1 using 1:3 with lines dashtype 4 title 'omega(t) - two-step' \n\
-	" | tee log.gpi | gnuplot
+	" | tee log1.gpi | gnuplot
 
 
 test2.pdf: solution.txt
@@ -52,7 +52,7 @@ test2.pdf: solution.txt
 		'solution.txt' index 2 using 1:3 with lines title 'omega(t) - one-step', \
 		'solution.txt' index 3 using 1:2 with lines dashtype 2 title 'theta(t) - two-step', \
 		'solution.txt' index 3 using 1:3 with lines dashtype 2 title 'omega(t) - two-step' \n\
-	" | tee log.gpi | gnuplot
+	" | tee log2.gpi | gnuplot
 
 test3.pdf: solution.txt
 	echo "\
@@ -67,10 +67,10 @@ test3.pdf: solution.txt
 		'solution.txt' index 4 using 1:3 with lines title 'omega(t) - one-step', \
 		'solution.txt' index 5 using 1:2 with lines dashtype 2 title 'theta(t) - two-step', \
 		'solution.txt' index 5 using 1:3 with lines dashtype 2 title 'omega(t) - two-step' \n\
-	" | tee log.gpi | gnuplot
+	" | tee log3.gpi | gnuplot
 
 
 .PHONEY:clean
 clean: 
-	rm -f *.txt *.exe *.dll *.pdf
+	rm -f *.txt *.exe *.dll *.pdf *.gpi
 

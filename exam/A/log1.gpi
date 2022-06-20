@@ -1,0 +1,9 @@
+set terminal pdf 
+set output 'test1.pdf' 
+set xlabel 'Time' 
+set ylabel 'Numerical solution' 
+set grid 
+set title 'Numerical solution to differential equation: u''=-u' 
+set key left top 
+plot [0:10] [] 'solution.txt' index 0 using 1:4 with lines title 'solution', 	'solution.txt' index 0 using 1:2 with lines title 'theta(t) - one-step', 	'solution.txt' index 0 using 1:3 with lines dashtype 2 title 'omega(t) - one-step', 	'solution.txt' index 1 using 1:2 with lines title 'theta(t) - two-step', 	'solution.txt' index 1 using 1:3 with lines dashtype 4 title 'omega(t) - two-step' 
+
