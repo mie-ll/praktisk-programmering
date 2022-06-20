@@ -77,7 +77,7 @@ public class ode{
 
 
 	//Driver
-	public static vector driver(
+	public static (vector,int) driver(
 		Func<double,vector,vector> f,
 		double a, vector ya, double b,
 		genlist<double> xlist=null, genlist<vector> ylist=null,
@@ -88,12 +88,13 @@ public class ode{
 		vector y = ya;
 		vector y_pre = ya;
 		double x_pre = a;
+		int steps = 0;
 		if(xlist != null && ylist != null){
 			xlist.push(x);
 			ylist.push(ya);
 		}
 		//Findes the first point with one-step method:
-			if(x>=b){return y;}
+			if(x>=b){return (y,steps);}
 			if(x+h>b){h=b-x;}
 	 (vector yh,vector erv) = rkstep45(f,x,y,h); //One-step method
 			vector tol = new vector(erv.size);
@@ -107,13 +108,13 @@ public class ode{
 				y_pre = y;			
 				y = yh;
 				if(xlist != null && ylist != null){
-					xlist.push(x); ylist.push(y); } }
+					xlist.push(x); ylist.push(y); steps++;} }
 			double factor = tol[0]/Abs(erv[0]);
 			for(int i=1; i<tol.size; i++){ factor = Min(factor, tol[i]/Abs(erv[i])); }
 			h *= Min(Pow(factor,0.25)*0.95, 2);
 		//Findes the last steps with two-step method:
 		do{
-			if(x>=b){return y;}
+			if(x>=b){return (y,steps);}
 			if(x+h>b){h=b-x;}
 		(yh,erv) = twostep(f,x,y,h, x_pre ,y_pre); //Two-step method		
 			ok = true;
@@ -126,7 +127,7 @@ public class ode{
 				y_pre = y;
 				y = yh;
 				if(xlist != null && ylist != null){					
-					xlist.push(x); ylist.push(y); } }
+					xlist.push(x); ylist.push(y); steps++; } }
 			factor = tol[0]/Abs(erv[0]);
 			for(int i=1; i<tol.size; i++){ factor = Min(factor, tol[i]/Abs(erv[i])); }
 			h *= Min(Pow(factor,0.25)*0.95, 2);	
@@ -134,18 +135,19 @@ public class ode{
 	}//driver
 
 
-	public static vector driver_onestep(
+	public static (vector, int) driver_onestep(
 		Func<double,vector,vector> f,
 		double a, vector ya, double b,
 		genlist<double> xlist=null, genlist<vector> ylist=null,
 		double h=0.01, double acc=1e-5, double eps=1e-5){
 
+		int steps = 1; //Number of iterations
 		if(a>b){throw new Exception("driver: a>b");}
 		double x = a;
 		vector y = ya;
 		if(xlist != null && ylist != null){ xlist.push(x); ylist.push(ya);}
 		do{
-			if(x>=b){return y;}
+			if(x>=b){return (y, steps);}
 			if(x+h>b){h=b-x;}
 			var (yh,erv) = rkstep45(f,x,y,h); //One-step method
 			vector tol = new vector(erv.size);
@@ -157,7 +159,8 @@ public class ode{
 				x += h;	y = yh;
 				if(xlist != null && ylist != null){
 					xlist.push(x);
-					ylist.push(y); } }
+					ylist.push(y);
+					steps++; } }
 			double factor = tol[0]/Abs(erv[0]);
 			for(int i=1; i<tol.size; i++){ factor = Min(factor, tol[i]/Abs(erv[i])); }
 			h *= Min(Pow(factor,0.25)*0.95, 2);
