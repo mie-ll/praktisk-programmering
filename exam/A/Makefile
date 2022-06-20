@@ -70,11 +70,7 @@ test3.pdf: solution.txt
 	" | tee log.gpi | gnuplot
 
 
-
-
-
 .PHONEY:clean
 clean: 
 	rm -f *.txt *.exe *.dll *.pdf
-
 

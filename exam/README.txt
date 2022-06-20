@@ -22,13 +22,12 @@ The implemented two-step method has been tested for 3 different ordinary differe
 Here the two-step method is compared with the one-step method in the plots made for each equation, see the pdf's. 
 In out.txt it is seen that the number of iterations is lower for the two-step method than for the one-step Runge-Kutta method.
 
+
 Note: that genlist.cs is from a homework, and vector.cs and matrix.cs is from the available mathbib. 
 My computer handle commas and period differently than other computers and therefore there ia a comma in the Makefile that makes commas(solution1.txt) to period(soultion.txt).
+
 
 
 Self-evaluation:
 The examination project was a succes. The two-step method was implemented and gave good results for different ordinary differential equations. 
 Furthermore was the two-step method compared with the one-step Runge-Kutta(RK45) method, both visually and how many iterations they each maded. Which was not a part of the problem formulation.
-
-
-

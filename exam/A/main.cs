@@ -16,7 +16,7 @@ public class main{
 		};
 		
 		vector y0_1 = new vector(0,-1);
-
+		//One-step
 		var xlist_11 = new genlist<double>();
 		var ylist_11 = new genlist<vector>();
 		(vector yend_11, int steps_11) = ode.driver_onestep(f1, begin, y0_1, end, xlist_11, ylist_11);
@@ -25,7 +25,7 @@ public class main{
 		}
 		
 		WriteLine($"\n");
-		
+		//Two-step
 		var xlist_21 = new genlist<double>();
 		var ylist_21 = new genlist<vector>();
 		(vector yend_21, int steps_21) = ode.driver(f1, begin, y0_1, end, xlist_21, ylist_21);
@@ -92,12 +92,12 @@ public class main{
 		
 
 
-Error.WriteLine("Ordinary differential equations:");
-Error.WriteLine("Here equations have been solved by using the new implemented two-step method. The first step is made by the one-step method knonw as Runge-Kutta(RK45).");
-Error.WriteLine("Test have been mad to compare the two-step method with the one-step method.");
-Error.WriteLine($"Test 1: y''=-y. Here the one-step method used {steps_11} iterations and the two-step method used {steps_21}.");
-Error.WriteLine($"Test 2: y''+b*y'+c*sin(y)=0. Here the one-step method used {steps_12} iterations and the two-step method used {steps_22}.");
-Error.WriteLine($"Test 3: y''-b*y'-c*cos(y)=0. Here the one-step method used {steps_13} iterations and the two-step method used {steps_23}.");
-Error.WriteLine("See the figures(test1.pdf, test2.pdf and test3.pdf) for visuel comparison.");
+		Error.WriteLine("Ordinary differential equations:");
+		Error.WriteLine("Here equations have been solved by using the new implemented two-step method. The first step is made by the one-step method knonw as Runge-Kutta(RK45).");
+		Error.WriteLine("Test have been mad to compare the two-step method with the one-step method.");
+		Error.WriteLine($"Test 1: y''=-y. Here the one-step method used {steps_11} iterations and the two-step method used {steps_21}.");
+		Error.WriteLine($"Test 2: y''+b*y'+c*sin(y)=0. Here the one-step method used {steps_12} iterations and the two-step method used {steps_22}.");
+		Error.WriteLine($"Test 3: y''-b*y'-c*cos(y)=0. Here the one-step method used {steps_13} iterations and the two-step method used {steps_23}.");
+		Error.WriteLine("See the figures(test1.pdf, test2.pdf and test3.pdf) for visuel comparison.");
 	}//Main
 }//main

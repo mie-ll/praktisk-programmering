@@ -76,7 +76,7 @@ public class ode{
 	} //twostep
 
 
-	//Driver
+	//Driver two-step
 	public static (vector,int) driver(
 		Func<double,vector,vector> f,
 		double a, vector ya, double b,
@@ -96,7 +96,7 @@ public class ode{
 		//Findes the first point with one-step method:
 			if(x>=b){return (y,steps);}
 			if(x+h>b){h=b-x;}
-	 (vector yh,vector erv) = rkstep45(f,x,y,h); //One-step method
+		 (vector yh,vector erv) = rkstep45(f,x,y,h); //One-step method
 			vector tol = new vector(erv.size);
 			bool ok = true;
 			for(int i=0; i<tol.size; i++){
