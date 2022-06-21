@@ -1,0 +1,9 @@
+set terminal pdf 
+set output 'test.pdf' 
+set xlabel 't' 
+set ylabel 'amplitude' 
+set grid 
+set title 'test of u''=-u' 
+set key left top 
+plot [0:10] [] 'solution.txt' index 1 using 1:2 with lines title 'theta(t)', 	'solution.txt' index 1 using 1:3 with lines title 'omega(t)'  
+

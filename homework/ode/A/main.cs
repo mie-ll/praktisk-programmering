@@ -17,6 +17,18 @@ public class main{
 		double end = 10;
 		vector y0 = new vector(PI-0.1,0.0);
 		vector yend = ode.driver(f, begin, y0, end);
+		
+		Error.WriteLine($"\n");
+		
+		//Debug
+		Func<double,vector,vector> f1 = delegate(double x, vector y){
+			double theta = y[0];
+			double omega = -y[1];
+			return new vector(omega, theta);
+		};
+		vector y0_test = new vector(0,-1);
+		vector yend_test = ode.driver(f1, begin, y0_test, end);
+
 
 	}
 
