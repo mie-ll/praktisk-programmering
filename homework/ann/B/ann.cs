@@ -36,7 +36,7 @@ public class ann{
 			double a = p[3*i+0];
 			double b = p[3*i+1];
 			double w = p[3*i+2];
-			Fp_diff += f_diff((x-a)/b)*w;
+			Fp_diff += f_diff((x-a)/b)*w/b;
 		}
 		return Fp_diff;
 	}//response_diff
@@ -47,7 +47,7 @@ public class ann{
 			double a = p[3*i+0];
 			double b = p[3*i+1];
 			double w = p[3*i+2];
-			Fp_int += f_int((x-a)/b)*w;
+			Fp_int += f_int((x-a)/b)*w*b;
 		}
 		return Fp_int;
 	}//response_int
